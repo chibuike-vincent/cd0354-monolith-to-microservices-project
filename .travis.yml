@@ -15,10 +15,10 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend codevin/udagram-frontend:v1
+  - docker build -t reverseproxy ./udagram-reverseproxy
+  - docker tag reverseproxy codevin/reverseproxy:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push codevin/udagram-frontend:v1
+  - docker push codevin/reverseproxy:v1
 
