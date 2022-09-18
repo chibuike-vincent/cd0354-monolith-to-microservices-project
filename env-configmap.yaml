@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-services-details # Name of the secret
+  namespace: default # Namespace of the secret
+data:
+  POSTGRES_HOST: udagramdb.czmemsqj7dic.us-east-1.rds.amazonaws.com
+  POSTGRES_USERNAME: vincent
+  POSTGRES_PASSWORD: vincentpassword
+  POSTGRES_DB: udagramdb
+  AWS_BUCKET: thirdprojectbucket
+  AWS_REGION: us-east-1
+  AWS_PROFILE: default
+  JWT_SECRET: mysecrettesting
+  URL: http://localhost:8100
