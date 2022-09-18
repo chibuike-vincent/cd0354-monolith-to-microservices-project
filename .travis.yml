@@ -16,18 +16,18 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy codevin/reverseproxy:v2
+  - docker tag reverseproxy codevin/reverseproxy:latest
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user codevin/udagram-api-user:v2
+  - docker tag udagram-api-user codevin/udagram-api-user:latest
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed codevin/udagram-api-feed:v2
+  - docker tag udagram-api-feed codevin/udagram-api-feed:latest
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend codevin/udagram-frontend:v2
+  - docker tag udagram-frontend codevin/udagram-frontend:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push codevin/reverseproxy:v2
-  - docker push codevin/udagram-api-user:v2
-  - docker push codevin/udagram-api-feed:v2
-  - docker push codevin/udagram-frontend:v2
+  - docker push codevin/reverseproxy:latest
+  - docker push codevin/udagram-api-user:latest
+  - docker push codevin/udagram-api-feed:latest
+  - docker push codevin/udagram-frontend:latest
 
