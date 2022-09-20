@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v1  # app version
 kind: Deployment
 metadata:
   name: backend-user
