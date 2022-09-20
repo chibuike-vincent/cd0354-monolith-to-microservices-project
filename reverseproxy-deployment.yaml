@@ -18,4 +18,9 @@ spec:
       - name: reverseproxy
         image: codevin/reverseproxy
         ports:
-        - containerPort: 8080
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m

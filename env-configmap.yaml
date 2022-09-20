@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: aws-services-details # Name of the secret
-  namespace: default # Namespace of the secret
+  name: aws-env-config
+  namespace: default
 data:
-  POSTGRES_HOST: udagramdb.czmemsqj7dic.us-east-1.rds.amazonaws.com
+  POSTGRES_HOST: udagramdb.cfsix8rjq9kv.us-east-1.rds.amazonaws.com
   POSTGRES_USERNAME: vincent
   POSTGRES_PASSWORD: vincentpassword
   POSTGRES_DB: udagramdb
