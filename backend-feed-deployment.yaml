@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        run: backend-feed
+        app: backend-feed
     spec:
       containers:
       - name: backend-feed

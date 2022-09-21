@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        run: backend-user
+        app: backend-user
     spec:
       containers:
       - name: backend-user
