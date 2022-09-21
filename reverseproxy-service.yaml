@@ -1,14 +1,15 @@
-apiVersion: v1  # app version
+apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: reverseproxy
+    service: reverseproxy
   name: reverseproxy-svc
 spec:
   ports:
-  - port: 8080
+  - name: "8080"
+    port: 8080
     targetPort: 8080
   selector:
-    app: reverseproxy
-  sessionAffinity: None
-  type: ClusterIP
+    service: reverseproxy
+
+
