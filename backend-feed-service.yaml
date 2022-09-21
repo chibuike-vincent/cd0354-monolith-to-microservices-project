@@ -1,14 +1,13 @@
-apiVersion: v1  # app version
+apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: backend-feed
-  name: backend-feed-svc
+    service: backend-feed
+  name: backend-feed
 spec:
   ports:
-  - port: 8080
+  - name: "8080"
+    port: 8080
     targetPort: 8080
   selector:
-    app: backend-feed
-  sessionAffinity: None
-  type: ClusterIP
+    service: backend-feed

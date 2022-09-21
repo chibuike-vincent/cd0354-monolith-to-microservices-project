@@ -1,24 +1,22 @@
-apiVersion: apps/v1  # app version
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-user
-  labels:
-    app: backend-user
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: backend-user
+  replicas: 2
   template:
     metadata:
       labels:
-        app: backend-user
+        run: backend-user
     spec:
       containers:
-      - name: udagram-api-user
+      - name: backend-user
         image: codevin/udagram-api-user
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
@@ -71,5 +69,4 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: env-config
-              key: POSTGRES_USERNAME       
-        
+              key: POSTGRES_USERNAME
