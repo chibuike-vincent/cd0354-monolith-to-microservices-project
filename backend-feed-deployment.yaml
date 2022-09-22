@@ -70,3 +70,8 @@ spec:
             configMapKeyRef:
               name: env-config
               key: POSTGRES_USERNAME
+      restartPolicy: Always
+      volumes:
+        - name: aws-secret
+          secret:
+            secretName: mysecret
